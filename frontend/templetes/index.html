@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfect Hair & Beauty Saloon</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../styles/index.css">
+</head>
+<body>
+    <nav>
+        <div class="navbar navbar_common">
+            <div class="navbar_logo">
+                    <img src="../assets/images/perfect_hair_n_beauty_logo.png" alt="perfect_hair_n_beauty_logo">
+            </div>
+
+            <div class="navbar_navigations navbar_common">
+                <div class="navigation_menu navbar_common">
+                    <div class="navigation_menu--1"><a href="/perfecthairnbeauty/home">Home</a></div>
+                    <div class="navigation_menu--2">Services</div>
+                    <div class="navigation_menu--3">About us</div>
+                    <div class="navigation_menu--4"><a href="/appointments/book-now">Book Now</a></div>
+                </div>
+        
+                <div class="navigation_links navbar_common">
+                    <div id="navigation_link_facebook">
+                        <i class='bx bxl-facebook bx-md' ></i>
+                    </div>
+                    <div id="navigation_link_instagram">
+                        <i class='bx bxl-instagram bx-md'></i>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </nav>
+
+<!-- ====================home==================== -->
+
+    <section id="home-section">
+        <!-- <h1>Hello Roshan Shrestha</h1> -->
+         <h1 id="greeting"></h1>
+    </section>
+
+<!-- ====================About==================== -->
+
+    <section id="about-section">
+
+    </section>
+
+<!-- ====================Cards==================== -->
+
+    <section id="cards-section">
+        <div class="card">
+            <div class="imgBox1">
+                <!-- <img src="../assets/images/beauty1.jpg" alt=""> -->
+            </div>
+            <div class="infoBox">
+                <h2>BOOK NOW</h2>
+
+                <div>
+                    <p>Schedule an appointment or set up a consultation</p>
+                    <button>Book now</button>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="imgBox2">
+            </div>
+            <div class="infoBox">
+                <h2>OUR SERVICES</h2>
+
+                <div>
+                    <p>Cuts, color, skin, glam … We will help you express yourself</p>
+                    <button>See Services</button>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="imgBox3">
+            </div>
+            <div class="infoBox">
+                <h2>GET INSPIRED</h2>
+
+                <div>
+                    <p>Schedule an appointment or set up a consultation</p>
+                    <button>See Instagram</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- ====================Message==================== -->
+
+    <section id="message-section">
+
+    </section>
+
+<!-- ====================Information==================== -->
+
+    <section id="information-section">
+        
+    </section>
+
+    <footer>
+        <div class="col1 cols">
+            <div class="footer_logo">
+                <img src="../assets/images/perfect_hair_n_beauty_logo.png" alt="perfect_hair_n_beauty_logo">
+            </div>
+            <div style="padding: 30px 0; position: relative;">
+                <i class='bx bxl-facebook bx-md' id="facebook_footer" ></i>
+                <i class='bx bxl-instagram bx-md' id="instagram_footer"></i>
+            </div>
+        </div>
+        <div class="col2 cols">
+            <h2>HOURS</h2>
+            <li>Sunday: 9-6</li>
+            <li>Monday: 9-6</li>
+            <li>Tuesday: 9-6</li>
+            <li>Wednesday: 9-6</li>
+            <li>Thrusday: 9-6</li>
+            <li>Friday: 9-6</li>
+            <li>Saturday: 9-6</li>
+        </div>
+        <div class="col3 cols">
+            <h2>LOCATION</h2>
+            <p>HongKong Bajar</p>
+            <p>Narayangardh, Chitwan</p>
+        </div>
+        <div class="col4 cols">
+            <div>Servie menu</div>
+            <div><a href="/appointments/book-now">Book now</a></div>
+        </div>
+    </footer>
+
+
+
+
+    <script src="../scripts/slider.js"></script>
+
+
+
+    <!-- <script>
+        // Function to get access token from cookies and decode it
+        const getUserNameFromToken = () => {
+            const token = document.cookie.split('accessToken=')[1];  // Get token from cookie
+    
+            if (token) {
+                try {
+                    // Split token into header, payload, and signature parts
+                    const payload = token.split('.')[1];
+    
+                    // Base64 decode the payload (replace any URL encoding)
+                    const base64Url = payload.replace(/-/g, '+').replace(/_/g, '/');
+                    const decodedPayload = atob(base64Url); // Decode base64
+    
+                    // Parse the JSON string and extract the name
+                    const parsedPayload = JSON.parse(decodedPayload);
+    
+                    return parsedPayload.name || null;  // Return user name if available
+                } catch (e) {
+                    console.error("Error decoding token:", e);
+                }
+            }
+    
+            return null;  // Return null if no token or decoding error
+        };
+    
+        // Check if user is logged in by accessing the token
+        const userName = getUserNameFromToken();
+    
+        // Update greeting message
+        const greetingElement = document.getElementById('greeting');
+        if (userName) {
+            greetingElement.innerHTML = `Hello, ${userName}`;  // Display the user's name
+        } else {
+            greetingElement.innerHTML = 'Hello, Guest';  // Display "Guest" if not logged in
+        }
+    </script> -->
+    
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Appointment - Perfect Hair & Beauty Saloon</title>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles/book-now.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="navbar navbar_common">
+        <div class="navbar_logo">
+          <img
+            src="../assets/images/perfect_hair_n_beauty_logo.png"
+            alt="perfect_hair_n_beauty_logo"
+          />
+        </div>
+
+        <div class="navbar_navigations navbar_common">
+          <div class="navigation_menu navbar_common">
+            <div class="navigation_menu--1"><a href="/perfecthairnbeauty/home">Home</a></div>
+            <div class="navigation_menu--2">Services</div>
+            <div class="navigation_menu--3">About us</div>
+            <div class="navigation_menu--4"><a href="/appointments/book-now">Book Now</a></div>
+        </div>
+
+          <div class="navigation_links navbar_common">
+            <div id="navigation_link_facebook">
+              <i class="bx bxl-facebook bx-md"></i>
+            </div>
+            <div id="navigation_link_instagram">
+              <i class="bx bxl-instagram bx-md"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- +++++++++++++++++++++++++ book now+++++++++++++++++++++++ -->
+    <section class="form-section">
+
+
+        <div class="container">
+            <h2>Book Your Appointment</h2>
+            <div id="error-message" class="error"></div>
+            <form id="appointmentForm">
+                <label for="date">Appointment Date:</label>
+                <input type="date" id="date" name="date" required />
+                
+                <label for="time">Appointment Time:</label>
+                <input type="time" id="time" name="time" required />
+                
+                <label for="service">Select Service:</label>
+                <select id="service" name="service" required>
+                    <option value="Haircut">Haircut</option>
+                    <option value="Facial">Facial</option>
+                    <option value="Manicure">Manicure</option>
+                    <option value="Pedicure">Pedicure</option>
+                    <option value="Massage">Massage</option>
+                    <option value="Makeup">Makeup</option>
+                    <option value="Hair Coloring">Hair Coloring</option>
+                </select>
+                
+                <button type="submit">Book Appointment</button>
+            </form>
+        </div>
+    </section>
+
+
+    <!-- -------------------------footer-------------------------- -->
+    <footer>
+      <div class="col1 cols">
+        <div class="footer_logo">
+          <img
+            src="../assets/images/perfect_hair_n_beauty_logo.png"
+            alt="perfect_hair_n_beauty_logo"
+          />
+        </div>
+        <div style="padding: 30px 0; position: relative">
+          <i class="bx bxl-facebook bx-md" id="facebook_footer"></i>
+          <i class="bx bxl-instagram bx-md" id="instagram_footer"></i>
+        </div>
+      </div>
+      <div class="col2 cols">
+        <h2>HOURS</h2>
+        <li>Sunday: 9-6</li>
+        <li>Monday: 9-6</li>
+        <li>Tuesday: 9-6</li>
+        <li>Wednesday: 9-6</li>
+        <li>Thrusday: 9-6</li>
+        <li>Friday: 9-6</li>
+        <li>Saturday: 9-6</li>
+      </div>
+      <div class="col3 cols">
+        <h2>LOCATION</h2>
+        <p>HongKong Bajar</p>
+        <p>Narayangardh, Chitwan</p>
+      </div>
+      <div class="col4 cols">
+        <div>Servie menu</div>
+        <div><a href="/appointments/book-now">Book now</a></div>
+      </div>
+    </footer>
+
+    <script src="../scripts/book-now.js"></script>
+
+  </body>
+</html>
