@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const appointmentSchema = new mongoose.Schema({
     user: {
-        type: mongoose.Schema.Types.ObjectId, // Reference to the User model
+        type: mongoose.Schema.Types.ObjectId, 
         ref: "User",
         required: true,
     },
@@ -25,12 +25,12 @@ const appointmentSchema = new mongoose.Schema({
             "Hair Coloring",
             "Makeup",
             "Massage"
-        ], // Example services, adjust as needed
+        ], 
     },
     status: {
         type: String,
         enum: ["Pending", "Confirmed", "Cancelled", "Completed"],
-        default: "Pending", // Default status when booking is created
+        default: "Pending", 
     },
     createdAt: {
         type: Date,

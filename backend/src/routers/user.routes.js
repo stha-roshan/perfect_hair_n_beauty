@@ -19,6 +19,11 @@ router.get("/login", (req, res) => {
     res.sendFile(loginPagePath);
 })
 
+router.get("/greet", (req, res) => {
+    const greetPath = path.resolve('../frontend/templetes/userGreet.html');
+    res.sendFile(greetPath);
+})
+
 router.route('/register').post( upload.none(), registerUser)
 router.route('/login').post(loginUser)
 router.route('/logout').post(verifyJWT, logoutUser)

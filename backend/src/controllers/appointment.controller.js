@@ -36,14 +36,17 @@ export const bookAppointment = asyncHandler(async (req, res) => {
 
 // Controller to fetch all appointments (admin functionality)
 export const getAllAppointments = asyncHandler(async (req, res) => {
+    // Fetch all appointments and populate the user field
     const appointments = await Appointment.find()
-        .populate("user", "fullName email") // Populate user details
-        .sort({ createdAt: -1 }); // Sort by latest first
+        .populate("user", "fullName email") // Populate user details (name and email)
+        .sort({ createdAt: -1 }); // Sort appointments by creation date (newest first)
 
+    // Return the appointments as a JSON response
     res.status(200).json(
         new ApiResponse(200, appointments, "All appointments fetched successfully")
     );
 });
+
 
 // Controller to fetch appointments for the logged-in user
 export const getUserAppointments = asyncHandler(async (req, res) => {
@@ -57,3 +60,31 @@ export const getUserAppointments = asyncHandler(async (req, res) => {
         new ApiResponse(200, appointments, "User appointments fetched successfully")
     );
 });
+
+
+
+// Confirm appointment
+export const confirmAppointment = async (req, res) => {
+    try {
+      const appointmentId = req.params.id;
+  
+      // Update the status to "Confirmed"
+      const updatedAppointment = await Appointment.findByIdAndUpdate(
+        appointmentId,
+        { status: "Confirmed" },
+        { new: true }
+      );
+  
+      if (!updatedAppointment) {
+        throw new ApiError(404, "Appointment not found")
+      }
+  
+      res.status(200).json(
+        new ApiResponse(200, updatedAppointment, "User appointments updated successfully")
+      );
+    } catch (error) {
+      console.error("Error confirming appointment:", error);
+      res.status(500).json({ message: "Internal server error" });
+    }
+  };
+  
