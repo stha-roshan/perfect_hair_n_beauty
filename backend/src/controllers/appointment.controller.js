@@ -87,4 +87,29 @@ export const confirmAppointment = async (req, res) => {
       res.status(500).json({ message: "Internal server error" });
     }
   };
+
+
+
+  export const cancleAppointment = async(req, res) => {
+    try{
+        const appointmentId = req.params.id
+
+        const cancledAppointment = await Appointment.findByIdAndUpdate(
+            appointmentId,
+            { status: "Cancelled"},
+            { new: true}
+        )
+
+        if(!cancledAppointment){
+            throw new ApiError(404, "Appointment not found")
+        }
+
+        res.status(200).json(
+            new ApiResponse(200, cancledAppointment, "User appointment cancled successfully")
+        )
+    }catch(error){
+        console.error("Error cancling appointment:", error);
+        res.status(500).json({ message: "Internal server error" });
+    }
+  }
   

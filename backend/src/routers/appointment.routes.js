@@ -1,26 +1,25 @@
 import express from "express";
-import { verifyJWT } from "../middlewares/auth.middleware.js";
+import { verifyJWT, JWTVerifyAdmin } from "../middlewares/auth.middleware.js";
 import {
     bookAppointment,
     getAllAppointments,
     getUserAppointments,
     confirmAppointment,
+    cancleAppointment,
 } from "../controllers/appointment.controller.js";
 
 import path from "path";
-// import { confirmAppointment } from "../controllers/appointment.controller.js";
-
-import { asyncHandler } from "../utils/asyncHandler.js";
+// import { asyncHandler } from "../utils/asyncHandler.js";
 
 const router = express.Router();
 
 // Route to create a new appointment (requires user authentication)
 router.post("/booknow", verifyJWT, bookAppointment);
 
-// Route to fetch all appointments (admin functionality)
-router.get("/all", verifyJWT, getAllAppointments);
+// Route to fetch all appointments (admin functionality requires admin authentication)
+router.get("/all", JWTVerifyAdmin, getAllAppointments);
 
-router.get('/allappointments', (req, res) => {
+router.get('/allappointments', JWTVerifyAdmin, (req, res) => {
     const allAppointmentsPath = path.resolve('../frontend/templetes/allappointments.html');
     res.sendFile(allAppointmentsPath);
 });
@@ -36,5 +35,6 @@ router.get('/book-now', (req, res) => {
 
 
 router.patch("/confirm/:id", confirmAppointment);
+router.patch("/cancle/:id", cancleAppointment)
 
 export default router;

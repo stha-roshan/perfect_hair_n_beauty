@@ -1,3 +1,5 @@
+// import { error } from "console";
+
 const cardSection = document.getElementById("cards-section");
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -42,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
             method: "PATCH",
             headers:{
               "Content-Type": "application/json",
-              Authorization: `Bearer ${localStorage.getItem("token")}`,
+              Authorization: `Bearer ${localStorage.getItem("adminToken")}`,
             }
           })
           .then((response) => {
@@ -60,7 +62,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         if (clickedElement.id === "reject") {
-          console.log(`Rejected appointment: ${card.id}`);
+          fetch(`/appointments/cancle/${card.id}`, {
+            method: "PATCH",
+            headers:{
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${localStorage.getItem("adminToken")}`
+            }
+          })
+          .then((response) => {
+            if(response.ok){
+              console.log(`Appointment ${card.id} cancled successfully`)
+            }else{
+              console.error("Failed to cancle the appointment")
+            }
+            return response.json()
+          })
+          .catch((error) => {
+            console.error("Error occured while cancling the appointment: ", error)
+          })
         }
       });
 

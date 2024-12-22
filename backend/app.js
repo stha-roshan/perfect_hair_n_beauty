@@ -24,11 +24,13 @@ app.use("/assets", express.static(path.resolve("../frontend/assets")));
 import userRoutes from "./src/routers/user.routes.js"
 import navigationRoutes from "./src/routers/prfectHnB.routes.js"
 import appointmentRoutes from "./src/routers/appointment.routes.js"
+import adminRoutes from "./src/routers/admin.routes.js"
 
 //routes declaration 
 app.use("/users", userRoutes)
 app.use("/perfecthairnbeauty", navigationRoutes)
 app.use("/appointments", appointmentRoutes);
+app.use("/admin", adminRoutes)
 
 
 
