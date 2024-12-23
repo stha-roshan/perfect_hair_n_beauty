@@ -49,7 +49,8 @@ document.addEventListener("DOMContentLoaded", () => {
           })
           .then((response) => {
             if(response.ok){
-              console.log(`Appointment ${card.id} confirmed successfully!`);
+              // console.log(`Appointment ${card.id} confirmed successfully!`);
+              location.reload()
             }else{
               console.error("Failed to confirm the appointment");
             }
@@ -71,7 +72,8 @@ document.addEventListener("DOMContentLoaded", () => {
           })
           .then((response) => {
             if(response.ok){
-              console.log(`Appointment ${card.id} cancled successfully`)
+              // console.log(`Appointment ${card.id} cancled successfully`)
+              location.reload()
             }else{
               console.error("Failed to cancle the appointment")
             }
