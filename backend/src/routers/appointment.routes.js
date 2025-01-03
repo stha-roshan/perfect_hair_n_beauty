@@ -6,6 +6,8 @@ import {
     getUserAppointments,
     confirmAppointment,
     cancleAppointment,
+    getConfirmedAppointment,
+    getCancledAppointment
 } from "../controllers/appointment.controller.js";
 
 import path from "path";
@@ -18,10 +20,22 @@ router.post("/booknow", verifyJWT, bookAppointment);
 
 // Route to fetch all appointments (admin functionality requires admin authentication)
 router.get("/all", JWTVerifyAdmin, getAllAppointments);
+router.get("/confirmed-appointments", JWTVerifyAdmin, getConfirmedAppointment )
+router.get("/cancelled-appointments", JWTVerifyAdmin, getCancledAppointment)
 
 router.get('/allappointments', JWTVerifyAdmin, (req, res) => {
     const allAppointmentsPath = path.resolve('../frontend/templetes/allappointments.html');
     res.sendFile(allAppointmentsPath);
+});
+
+router.get('/confirmed', JWTVerifyAdmin, (req, res) => {
+    const confirmedAppointmentsPath = path.resolve('../frontend/templetes/confirmedAppointments.html');
+    res.sendFile(confirmedAppointmentsPath);
+});
+
+router.get('/cancelled', JWTVerifyAdmin, (req, res) => {
+    const cancelledAppointmentsPath = path.resolve('../frontend/templetes/cancelledAppointments.html');
+    res.sendFile(cancelledAppointmentsPath);
 });
 
 

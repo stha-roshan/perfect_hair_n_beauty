@@ -47,12 +47,42 @@ export const getAllAppointments = asyncHandler(async (req, res) => {
     );
 });
 
+export const getConfirmedAppointment = asyncHandler( async(req, res) => {
+    const confirmAppointmentList = await Appointment.find({status: "Confirmed"}) 
+    .populate({
+        path: "user",
+        select: "fullName email"
+    })
+    .sort({createdAt: -1})
+
+    res.status(200).json(
+        new ApiResponse(200, confirmAppointmentList, "Confirmed appointments fetched successfully ")
+    )
+})
+
+export const getCancledAppointment = asyncHandler(async(req, res) => {
+    const cancledAppointmentList = await Appointment.find({status: "Cancelled"})
+    .populate({
+        path: "user",
+        select: "fullName email"
+    })
+    .sort({createdAt: -1})
+
+    res.status(200).json(
+        new ApiResponse(200, cancledAppointmentList, "Cancelled appointment fetched successfully" )
+    )
+})
 
 // Controller to fetch appointments for the logged-in user
 export const getUserAppointments = asyncHandler(async (req, res) => {
     const userId = req.user.id;
 
-    const appointments = await Appointment.find({ user: userId }).sort({
+    const appointments = await Appointment.find({ user: userId })
+    .populate({
+        path: "user",
+        select: "fullName email"
+    })
+    .sort({
         createdAt: -1,
     });
 
@@ -89,7 +119,7 @@ export const confirmAppointment = async (req, res) => {
   };
 
 
-
+//cancle apppointment
   export const cancleAppointment = async(req, res) => {
     try{
         const appointmentId = req.params.id
