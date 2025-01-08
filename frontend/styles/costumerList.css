@@ -51,119 +51,6 @@ h1{
 }
 
 
-
-#banner{
-    height: 150px;
-    /* background: #CCCCCC; */
-}
-
-#info{
-    height: 50px;
-    background: #F4F4F4;
-    padding: 0 80px;
-    display: flex;
-    /* justify-content: center; */
-    align-items: center;
-}
-
-.infoText{
-    color: #7C7C7D;
-}
-
-#info .name{
-    min-width: 250px;
-}
-
-#info .email{
-    min-width: 300px;
-}
-
-#info .service{
-    min-width: 200px;
-}
-
-#info .date{
-    min-width: 190px;
-}
-
-#info .time{
-    min-width: 160px;
-}
-
-#cards-section{
-    padding: 0px 50px;
-}
-
-.card{
-    margin: 20px 0px;
-    display: flex;
-    padding: 12px 24px;
-    border: 1px solid #D9D9D9;
-}
-
-.card #name{
-    /* background: aqua; */
-    min-width: 250px;
-}
-
-.card #email{
-    /* background: aqua; */
-    min-width: 300px;
-}
-
-.card #service{
-    /* background: aqua; */
-    min-width: 200px;
-}
-
-.card #date{
-    /* background: aqua; */
-    min-width: 190px;
-}
-
-.card #time{
-    /* background: aqua; */
-    min-width: 160px;
-}
-
-.card #status{
-    min-width: 200px;
-}
-
-
-.buttons #accept,
-#reject
-{
-    padding: 5px 15px;
-    font-size: 16px;
-    outline: none;
-    border: none;
-    border-radius: 2px;
-}
-
-.buttons #accept,
-#reject:hover{
-    cursor: pointer;
-}
-
-.buttons{
-    /* background: #000; */
-    width: 450px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-#accept{
-    background: #13EF55;
-    color: #FFFFFF;
-}
-
-#reject{
-    background: #FF0404;
-    color: #FFFFFF;
-}
-
 select#appointments {
     padding: 10px;
     font-size: 16px;
@@ -186,3 +73,99 @@ select#appointments:focus {
     border: none;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
+
+
+#banner{
+    height: 150px;
+    /* background: #CCCCCC; */
+}
+
+#info{
+    height: 50px;
+    background: #F4F4F4;
+    padding: 0 375px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.infoText{
+    color: #7C7C7D;
+}
+
+
+
+
+
+
+/* #info .name{
+    min-width: 250px;
+}
+
+#info .email{
+    min-width: 300px;
+}
+
+#info .phone{
+    min-width: 200px;
+}
+
+#info .date{
+    min-width: 190px;
+}
+
+#info .time{
+    min-width: 160px;
+} */
+
+.info-wrapper{
+    display: flex;
+    justify-content: space-between;
+    /* width: 300px; */
+    /* background: aqua; */
+}
+
+.info-wrapper .name{
+    min-width: 250px;
+}
+
+.info-wrapper .email{
+    min-width: 300px;
+}
+
+/* .info-wrapper .phone{
+    min-width: 200px;
+} */
+
+#cards-section{
+    height: 200px;
+    /* background: aqua; */
+    display: flex;
+    justify-content: center;
+}
+
+#cards-wrapper{
+    width: 45%;
+    height: 200px;
+    /* background: red; */
+}
+
+.card{
+    margin: 20px 0px;
+    display: flex;
+    padding: 12px 24px;
+    padding-left: 130px;
+    border: 1px solid #D9D9D9;
+    /* width: 800px; */
+}
+
+.card #name{
+    /* background: aqua; */
+    min-width: 250px;
+}
+
+.card #email{
+    /* background: aqua; */
+    min-width: 300px;
+}
+

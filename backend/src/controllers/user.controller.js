@@ -76,7 +76,7 @@ const registerUser = asyncHandler( async (req, res) => {
 
 // fetching all users from database --logic
 const getAllUsers = asyncHandler( async(req, res) => {
-    const databaseUsers = await User.find({}, "fullName email")
+    const databaseUsers = await User.find({}, "fullName email phone")
 
     const response = new ApiResponse(200, databaseUsers, "All users registered in database successfully fetched")
 

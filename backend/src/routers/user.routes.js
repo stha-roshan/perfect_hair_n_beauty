@@ -3,7 +3,7 @@ import { registerUser, getAllUsers, loginUser, logoutUser } from "../controllers
 // import { getUserAppointments } from "../controllers/appointment.controller.js";
 import path from "path";
 import multer from "multer";
-import { verifyJWT } from "../middlewares/auth.middleware.js";
+import { verifyJWT, JWTVerifyAdmin } from "../middlewares/auth.middleware.js";
 
 const router = Router()
 const upload = multer()
@@ -28,6 +28,11 @@ router.get("/login", (req, res) => {
 router.get("/history", (req, res) => {
     const userHistoryPath = path.resolve('../frontend/templetes/userHistory.html');
     res.sendFile(userHistoryPath);
+})
+
+router.get("/costumer-list",JWTVerifyAdmin, (req, res) => {
+    const userListPath = path.resolve('../frontend/templetes/costumerList.html');
+    res.sendFile(userListPath);
 })
 
 router.route('/register').post( upload.none(), registerUser)
