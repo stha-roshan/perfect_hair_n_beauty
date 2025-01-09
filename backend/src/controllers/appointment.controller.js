@@ -2,6 +2,7 @@ import { Appointment } from "../models/appointment.models.js";
 import { asyncHandler } from "../utils/asyncHandler.js";
 import { ApiResponse } from "../utils/ApiResponse.js";
 import { ApiError } from "../utils/ApiError.js";
+import { sendCancellationMail, sendConfirmationMail } from "../utils/mailtrap.js";
 
 export const bookAppointment = asyncHandler(async (req, res) => {
   const userId = req.user.id;
@@ -128,11 +129,17 @@ export const confirmAppointment = async (req, res) => {
       appointmentId,
       { status: "Confirmed" },
       { new: true }
-    );
+    ).populate("user")
 
     if (!updatedAppointment) {
       throw new ApiError(404, "Appointment not found");
     }
+
+    const recipient = {
+      email: updatedAppointment.user.email,
+      name: updatedAppointment.user.fullName,
+    };
+    await sendConfirmationMail(recipient);
 
     res
       .status(200)
@@ -158,11 +165,17 @@ export const cancleAppointment = async (req, res) => {
       appointmentId,
       { status: "Cancelled" },
       { new: true }
-    );
+    ).populate("user")
 
     if (!cancledAppointment) {
       throw new ApiError(404, "Appointment not found");
     }
+
+    const recipient = {
+      email: cancledAppointment.user.email,
+      name: cancledAppointment.user.fullName,
+    };
+    await sendCancellationMail(recipient);
 
     res
       .status(200)

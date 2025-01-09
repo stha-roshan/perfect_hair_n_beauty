@@ -1,21 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <form id="loginForm">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required />
-      
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required />
-      
-        <button type="submit">Login</button>
-      </form>
-      
-      <script src="../scripts/login.js"></script>
-</body>
+    <link rel="stylesheet" href="../styles/login.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="img-container">
+        <img src="../assets/images/perfect_hair_n_beauty_logo.png" alt="" />
+        <div>
+          <div>Perfect Hair & Salon</div>
+          <div>All beauty related works are carried out professionally</div>
+        </div>
+      </div>
+
+      <div class="form-container">
+        <form id="loginForm" action="">
+          <h2>Log in</h2>
+
+          <div class="form-control">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+
+          <div class="form-control">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required />
+          </div>
+
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+      <!--form  container -->
+    </div>
+
+    <script src="../scripts/login.js"></script>
+  </body>
 </html>
