@@ -1,171 +1,140 @@
-@import url('https://fonts.googleapis.com/css2?family=Benne&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Benne&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-h1{
-    text-align: center;
+h1 {
+  text-align: center;
 }
 
-
-.navbar_common{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.navbar_common {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.navbar{
-
-    height: 100px;
-    width: 100%;
-    padding: 0 80px;
-    border: 1px solid #CCCCCC;
+.navbar {
+  height: 100px;
+  width: 100%;
+  padding: 0 80px;
+  border: 1px solid #cccccc;
 }
 
-.navbar_logo{
-    height: 100px;
-    /* background-color: black; */
+.navbar_logo {
+  height: 100px;
+  /* background-color: black; */
 
-    img{
-        height: 100%;
-    }
+  img {
+    height: 100%;
+  }
 }
 
-.navbar_navigations{
-    width: 50%;
-    /* background-color: blue; */
+.navbar_navigations {
+  width: 50%;
+  /* background-color: blue; */
 }
 
-.navigation_menu{
-    gap: 80px;
-    margin-left: 150px;
-    /* background-color: cornflowerblue; */
+.navigation_menu {
+  gap: 80px;
+  margin-left: 150px;
+  /* background-color: cornflowerblue; */
 }
 
-.navigation_links{
-    gap: 40px;
+.navigation_links {
+  gap: 40px;
 }
-
 
 select#appointments {
-    padding: 10px;
-    font-size: 16px;
-    border: none;
-    border-radius: 4px;
-    background-color: #fff;
-    color: #333;
-    outline: none;
-    cursor: pointer;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #333;
+  outline: none;
+  cursor: pointer;
 }
 
 select#appointments option {
-    padding: 10px;
-    font-size: 16px;
-    background-color: #fff;
-    color: #333;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #fff;
+  color: #333;
 }
 
 select#appointments:focus {
-    border: none;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  border: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
-
-#banner{
-    height: 150px;
-    /* background: #CCCCCC; */
+#banner {
+  height: 150px;
+  /* background: #CCCCCC; */
 }
 
-#info{
-    height: 50px;
-    background: #F4F4F4;
-    padding: 0 375px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#info {
+  height: 50px;
+  background: #f4f4f4;
+  padding: 0 375px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.infoText{
-    color: #7C7C7D;
+.infoText {
+  color: #7c7c7d;
 }
 
-
-
-
-
-
-/* #info .name{
-    min-width: 250px;
+.info-wrapper {
+  display: flex;
+  justify-content: space-between;
+  /* width: 300px; */
+  /* background: aqua; */
 }
 
-#info .email{
-    min-width: 300px;
+.info-wrapper .name {
+  min-width: 250px;
 }
 
-#info .phone{
-    min-width: 200px;
-}
-
-#info .date{
-    min-width: 190px;
-}
-
-#info .time{
-    min-width: 160px;
-} */
-
-.info-wrapper{
-    display: flex;
-    justify-content: space-between;
-    /* width: 300px; */
-    /* background: aqua; */
-}
-
-.info-wrapper .name{
-    min-width: 250px;
-}
-
-.info-wrapper .email{
-    min-width: 300px;
+.info-wrapper .email {
+  min-width: 300px;
 }
 
 /* .info-wrapper .phone{
     min-width: 200px;
 } */
 
-#cards-section{
-    height: 200px;
-    /* background: aqua; */
-    display: flex;
-    justify-content: center;
+#cards-section {
+  height: 200px;
+  /* background: aqua; */
+  display: flex;
+  justify-content: center;
 }
 
-#cards-wrapper{
-    width: 45%;
-    height: 200px;
-    /* background: red; */
+#cards-wrapper {
+  width: 45%;
+  height: 200px;
+  /* background: red; */
 }
 
-.card{
-    margin: 20px 0px;
-    display: flex;
-    padding: 12px 24px;
-    padding-left: 130px;
-    border: 1px solid #D9D9D9;
-    /* width: 800px; */
+.card {
+  margin: 20px 0px;
+  display: flex;
+  padding: 12px 24px;
+  padding-left: 130px;
+  border: 1px solid #d9d9d9;
+  /* width: 800px; */
 }
 
-.card #name{
-    /* background: aqua; */
-    min-width: 250px;
+.card #name {
+  /* background: aqua; */
+  min-width: 250px;
 }
 
-.card #email{
-    /* background: aqua; */
-    min-width: 300px;
+.card #email {
+  /* background: aqua; */
+  min-width: 300px;
 }
-

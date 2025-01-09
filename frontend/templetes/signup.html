@@ -21,22 +21,26 @@
           <h2>Sign Up</h2>
           <div class="form-control">
             <label for="name">Name</label>
-            <input type="text" id="name" name="fullName"/>
+            <input type="text" id="name" name="fullName" />
+            <label for="error" class="err-message" id="name-err"></label>
           </div>
 
           <div class="form-control">
             <label for="email">Email</label>
-            <input type="text" id="email" name="email"/>
+            <input type="text" id="email" name="email" />
+            <label for="error" class="err-message" id="email-err"></label>
           </div>
 
           <div class="form-control">
             <label for="phone">Phone</label>
-            <input type="text" id="phone" name="phone"/>
+            <input type="text" id="phone" name="phone" />
+            <label for="error" class="err-message" id="phone-err"></label>
           </div>
 
           <div class="form-control">
             <label for="password">Password</label>
-            <input type="password" id="password" name="password"/>
+            <input type="password" id="password" name="password" />
+            <label for="error" class="err-message" id="pass-err"></label>
           </div>
 
           <button type="submit">Submit</button>
@@ -46,42 +50,145 @@
     </div>
     <!--container -->
 
-
-
-
     <script>
-        const form = document.getElementById('form');
+      const name = document.getElementById("name");
+      const email = document.getElementById("email");
+      const phone = document.getElementById("phone");
+      const password = document.getElementById("password");
+      const form = document.getElementById("form");
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
 
-        form.addEventListener('submit', async (event) => {
-            event.preventDefault(); 
+        // for name
+        if (name.value.trim() === "") {
+          document.getElementById("name-err").innerText = "Enter a name";
+        }
+        const nameRegex = /^[A-Za-z\s]+$/;
+        if (!nameRegex.test(name.value.trim())) {
+          document.getElementById("name-err").innerText = "Invalid Name Format";
+        } else if (name.value.trim() !== "") {
+          document.getElementById("name-err").innerText = "";
+        }
 
-            // Create a FormData object to send form data
-            const formData = new FormData(form);
+        // for email
+        const emailRegex =
+          /^[a-zA-Z][a-zA-Z0-9._%+-]*@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-            try {
-                // Sending data to the backend using fetch
-                const response = await fetch('/users/register', {
-                    method: 'POST',
-                    body: formData
-                });
+        if (!emailRegex.test(email.value.trim())) {
+          document.getElementById("email-err").innerText =
+            "Invalid email Format";
+        } else if (email.value.trim() !== "") {
+          document.getElementById("email-err").innerText = "";
+        }
 
-                const result = await response.json();
+        // for phone
+        const phoneRegex = /^(98|97)\d{8}$/;
+        if (!phoneRegex.test(phone.value.trim())) {
+          document.getElementById("phone-err").innerText =
+            "Phone no must be of 10 digits and starts with 98 or 97";
+        } else if (phone.value.trim() !== "") {
+          document.getElementById("phone-err").innerText = "";
+        }
 
-                // Handling response
-                if (response.ok) {
-                    alert('User registered successfully!');
-                    form.reset(); 
-                } else {
-                    alert('Registration failed: ' + result.message);
-                }
-            } catch (error) {
-                console.error('Error during registration:', error);
-                alert('An error occurred. Please try again.');
-            }
+        //for password
+        if (password.value.trim().length < 6) {
+          document.getElementById("pass-err").innerText =
+            "Password must be at least 6 characters";
+        } else if (password.value.trim() !== "") {
+          document.getElementById("pass-err").innerText = "";
+        }
+
+        // Create a FormData object to send form data
+        const formData = new FormData(form);
+
+        try {
+          // Sending data to the backend using fetch
+          const response = await fetch("/users/register", {
+            method: "POST",
+            body: formData,
+          });
+
+          const result = await response.json();
+
+          // Handling response
+          if (response.ok) {
+            alert("User registered successfully!");
+            form.reset();
+            window.location.reload();
+          } else {
+            alert("Registration failed: " + result.message);
+          }
+        } catch (error) {
+          console.error("Error during registration:", error);
+          alert("An error occurred. Please try again.");
+        }
+      });
+
+      //for name
+      function validateName() {
+        const name = document.getElementById("name");
+        name.addEventListener("input", () => {
+          if (name.value.trim() === "") {
+            document.getElementById("name-err").innerText = "Enter a name";
+          }
+          const nameRegex = /^[A-Za-z\s]+$/;
+          if (!nameRegex.test(name.value.trim())) {
+            document.getElementById("name-err").innerText =
+              "Invalid Name Format";
+          } else if (name.value.trim() !== "") {
+            document.getElementById("name-err").innerText = "";
+          }
         });
+      }
+
+      //for email
+      function validateEmail() {
+        const email = document.getElementById("email");
+        email.addEventListener("input", () => {
+          const emailRegex =
+            /^[a-zA-Z][a-zA-Z0-9._%+-]*@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+          if (!emailRegex.test(email.value.trim())) {
+            document.getElementById("email-err").innerText =
+              "Invalid email Format";
+          } else if (email.value.trim() !== "") {
+            document.getElementById("email-err").innerText = "";
+          }
+        });
+      }
+
+      // for phone
+      function validatePhone() {
+        const phone = document.getElementById("phone");
+        phone.addEventListener("input", () => {
+          const phoneRegex = /^(98|97)\d{8}$/;
+          if (!phoneRegex.test(phone.value.trim())) {
+            document.getElementById("phone-err").innerText =
+              "Phone no must be of 10 digits and starts with 98";
+          } else if (phone.value.trim() !== "") {
+            document.getElementById("phone-err").innerText = "";
+          }
+        });
+      }
+
+      //for password
+      function validatePassword() {
+        const password = document.getElementById("password");
+        password.addEventListener("input", () => {
+          if (password.value.trim().length < 6) {
+            document.getElementById("pass-err").innerText =
+              "Password must be at least 6 characters";
+          } else if (password.value.trim() !== "") {
+            document.getElementById("pass-err").innerText = "";
+          }
+        });
+      }
+
+      validateName();
+      validateEmail();
+      validatePhone();
+      validatePassword();
     </script>
 
-
-
+    <script src="../scripts/signup.js"></script>
   </body>
 </html>

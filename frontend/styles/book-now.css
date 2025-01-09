@@ -1,7 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Benne&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Benne&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -11,43 +10,42 @@
   outline: none;
 }
 
-.navbar_common{
+.navbar_common {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.navbar{
+.navbar {
   background-color: #f4f4f4;
   height: 100px;
   width: 100%;
   padding: 0 80px;
 }
 
-.navbar_logo{
+.navbar_logo {
   height: 100px;
   /* background-color: black; */
 
-  img{
-      height: 100%;
+  img {
+    height: 100%;
   }
 }
 
-.navbar_navigations{
+.navbar_navigations {
   width: 50%;
   /* background-color: blue; */
 }
 
-.navigation_menu{
+.navigation_menu {
   gap: 40px;
   margin-left: 150px;
   /* background-color: cornflowerblue; */
 }
 
-.navigation_links{
+.navigation_links {
   gap: 40px;
 }
-
 
 /* nav */
 
@@ -58,7 +56,7 @@
   height: 100%;
 } */
 
-.form-section{
+.form-section {
   height: 600px;
 }
 
@@ -89,7 +87,9 @@ label {
   color: #555;
 }
 
-input, select, textarea {
+input,
+select,
+textarea {
   padding: 10px;
   margin-bottom: 20px;
   border-radius: 5px;
@@ -118,13 +118,10 @@ button:hover {
   margin-bottom: 20px;
 }
 
-
-
-
-footer{
+footer {
   height: 40vh;
   width: 100%;
-  background: #1E1E1E;
+  background: #1e1e1e;
   display: flex;
   /* gap: 20px; */
   padding: 30px 30px;
@@ -132,84 +129,82 @@ footer{
   align-items: center;
 }
 
-.cols{
+.cols {
   /* background: aqua; */
   height: 100%;
   width: 20%;
 
-  h2{
-      padding: 6px 0;
-      letter-spacing: 4px;
-      font-size: 26px;
-      color: #fff;
-      font-weight: 700;
-      font-family: "Benne", serif;
+  h2 {
+    padding: 6px 0;
+    letter-spacing: 4px;
+    font-size: 26px;
+    color: #fff;
+    font-weight: 700;
+    font-family: "Benne", serif;
   }
 
-  li,p{
-      padding: 5px 5px;
-      font-size: 18px;
-      color: #fff;
-      font-family: "Benne", serif;
+  li,
+  p {
+    padding: 5px 5px;
+    font-size: 18px;
+    color: #fff;
+    font-family: "Benne", serif;
   }
 }
 
-
-.footer_logo{
+.footer_logo {
   height: 170px;
   /* background-color: black; */
   position: relative;
 
-  img{
-      height: 100%;
-      position: absolute;
-      left: 50px;
+  img {
+    height: 100%;
+    position: absolute;
+    left: 50px;
   }
 }
 
-#facebook_footer{
+#facebook_footer {
   color: #fff;
   position: absolute;
   left: 90px;
   transition: transform 0.3s ease;
 }
 
-#facebook_footer:hover{
+#facebook_footer:hover {
   cursor: pointer;
   color: #b1b1b1;
   transform: scale(1.1);
 }
 
-#instagram_footer{
+#instagram_footer {
   color: #fff;
   position: absolute;
   left: 150px;
   transition: transform 0.3s ease;
 }
 
-#instagram_footer:hover{
+#instagram_footer:hover {
   cursor: pointer;
   color: #b1b1b1;
   transform: scale(1.1);
 }
 
-
-
-  
-
-.col2,.col3,.col4{
+.col2,
+.col3,
+.col4 {
   padding: 25px 50px;
 }
 
-.col4 div{
-      padding: 5px 5px;
-      font-size: 20px;
-      color: #b1b1b1;
-      font-family: "Benne", serif;
-      transition: transform 0.3s ease;
+.col4 div {
+  padding: 5px 5px;
+  font-size: 20px;
+  color: #b1b1b1;
+  font-family: "Benne", serif;
+  transition: transform 0.3s ease;
 }
 
-.col4 div:hover{
+.col4 div:hover {
   cursor: pointer;
   transform: scale(1.1);
 }

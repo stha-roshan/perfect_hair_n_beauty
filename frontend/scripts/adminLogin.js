@@ -1,18 +1,18 @@
-const loginForm = document.getElementById('loginForm');
+const loginForm = document.getElementById("loginForm");
 
-loginForm.addEventListener('submit', async (event) => {
-  event.preventDefault(); // Prevent form from reloading the page
+loginForm.addEventListener("submit", async (event) => {
+  event.preventDefault();
 
   // Get the values from the form
-  const username = document.getElementById('username').value;
-  const password = document.getElementById('password').value;
+  const username = document.getElementById("username").value;
+  const password = document.getElementById("password").value;
 
   try {
     // Send a POST request to the backend
-    const response = await fetch('http://localhost:8000/admin/login', {
-      method: 'POST',
+    const response = await fetch("http://localhost:8000/admin/login", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({ username, password }),
     });
@@ -21,21 +21,14 @@ loginForm.addEventListener('submit', async (event) => {
 
     if (response.ok) {
       // Successfully logged in
-      alert('Login successful');
-      console.log(result); // Contains user info, accessToken, etc.
-
-      // Store tokens in localStorage (optional)
-    //   localStorage.setItem('accessToken', result.data.accessToken);
-    //   localStorage.setItem('refreshToken', result.data.refreshToken);
-
-      // Redirect to another page if needed
-    //   window.location.href = '/perfecthairnbeauty/home';
+      alert("Login successful");
+      console.log(result);
     } else {
       // Show error message
-      alert(result.message || 'Login failed');
+      alert(result.message || "Login failed");
     }
   } catch (error) {
-    console.error('Error logging in:', error);
-    alert('Something went wrong. Please try again later.');
+    console.error("Error logging in:", error);
+    alert("Something went wrong. Please try again later.");
   }
 });

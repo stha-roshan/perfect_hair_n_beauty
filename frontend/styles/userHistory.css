@@ -1,130 +1,128 @@
-@import url('https://fonts.googleapis.com/css2?family=Benne&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Benne&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    list-style: none;
-    text-decoration: none;
-    border: none;
-    outline: none;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  border: none;
+  outline: none;
 }
 
-.navbar_common{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.navbar_common {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.navbar{
-    /* background-color: aqua; */
-    background-color: #f4f4f4;
-    height: 100px;
-    width: 100%;
-    padding: 0 80px;
+.navbar {
+  /* background-color: aqua; */
+  background-color: #f4f4f4;
+  height: 100px;
+  width: 100%;
+  padding: 0 80px;
 }
 
-.navbar_logo{
-    height: 100px;
-    /* background-color: black; */
+.navbar_logo {
+  height: 100px;
+  /* background-color: black; */
 
-    img{
-        height: 100%;
-    }
+  img {
+    height: 100%;
+  }
 }
 
-.navbar_navigations{
-    width: 50%;
-    /* background-color: blue; */
+.navbar_navigations {
+  width: 50%;
+  /* background-color: blue; */
 }
 
-.navigation_menu{
-    gap: 40px;
-    margin-left: 150px;
-    /* background-color: cornflowerblue; */
+.navigation_menu {
+  gap: 40px;
+  margin-left: 150px;
+  /* background-color: cornflowerblue; */
 }
 
-.navigation_links{
-    gap: 40px;
+.navigation_links {
+  gap: 40px;
 }
 
-
-
-#banner{
-    height: 150px;
-    /* background: #CCCCCC; */
+#banner {
+  height: 150px;
+  /* background: #CCCCCC; */
 }
 
-#info{
-    height: 50px;
-    background: #F4F4F4;
-    padding: 0 375px;
-    display: flex;
-    /* justify-content: center; */
-    align-items: center;
+#info {
+  height: 50px;
+  background: #f4f4f4;
+  padding: 0 375px;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
 }
 
-.infoText{
-    color: #7C7C7D;
+.infoText {
+  color: #7c7c7d;
 }
 
-#info .name{
-    min-width: 250px;
+#info .name {
+  min-width: 250px;
 }
 
-#info .email{
-    min-width: 300px;
+#info .email {
+  min-width: 300px;
 }
 
-#info .service{
-    min-width: 200px;
+#info .service {
+  min-width: 200px;
 }
 
-#info .date{
-    min-width: 190px;
+#info .date {
+  min-width: 190px;
 }
 
-#info .time{
-    min-width: 160px;
+#info .time {
+  min-width: 160px;
 }
 
-#cards-section{
-    padding: 0px 350px;
+#cards-section {
+  padding: 0px 350px;
 }
 
-.card{
-    margin: 20px 0px;
-    display: flex;
-    padding: 12px 24px;
-    border: 1px solid #D9D9D9;
-    /* width: 800px; */
+.card {
+  margin: 20px 0px;
+  display: flex;
+  padding: 12px 24px;
+  border: 1px solid #d9d9d9;
+  /* width: 800px; */
 }
 
-.card #name{
-    /* background: aqua; */
-    min-width: 250px;
+.card #name {
+  /* background: aqua; */
+  min-width: 250px;
 }
 
-.card #email{
-    /* background: aqua; */
-    min-width: 300px;
+.card #email {
+  /* background: aqua; */
+  min-width: 300px;
 }
 
-.card #service{
-    /* background: aqua; */
-    min-width: 200px;
+.card #service {
+  /* background: aqua; */
+  min-width: 200px;
 }
 
-.card #date{
-    /* background: aqua; */
-    min-width: 190px;
+.card #date {
+  /* background: aqua; */
+  min-width: 190px;
 }
 
-.card #time{
-    /* background: aqua; */
-    min-width: 160px;
+.card #time {
+  /* background: aqua; */
+  min-width: 160px;
 }
 
-.card #status{
-    min-width: 200px;
+.card #status {
+  min-width: 200px;
 }

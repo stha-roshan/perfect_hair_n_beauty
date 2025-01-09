@@ -34,57 +34,60 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
       `;
 
-      card.addEventListener("click", (e) => {
-        e.stopPropagation(); 
-        const clickedElement = e.target; 
+        card.addEventListener("click", (e) => {
+          e.stopPropagation();
+          const clickedElement = e.target;
 
-        
-        if (clickedElement.id === "accept") {
-          fetch(`/appointments/confirm/${card.id}`, {
-            method: "PATCH",
-            headers:{
-              "Content-Type": "application/json",
-              Authorization: `Bearer ${localStorage.getItem("adminToken")}`,
-            }
-          })
-          .then((response) => {
-            if(response.ok){
-              // console.log(`Appointment ${card.id} confirmed successfully!`);
-              location.reload()
-            }else{
-              console.error("Failed to confirm the appointment");
-            }
-            return response.json()
-          })
-          .catch((error) => {
-            console.error("Error occurred while confirming the appointment:", error);
-          })
-        } 
+          if (clickedElement.id === "accept") {
+            fetch(`/appointments/confirm/${card.id}`, {
+              method: "PATCH",
+              headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${localStorage.getItem("adminToken")}`,
+              },
+            })
+              .then((response) => {
+                if (response.ok) {
+                  // console.log(`Appointment ${card.id} confirmed successfully!`);
+                  location.reload();
+                } else {
+                  console.error("Failed to confirm the appointment");
+                }
+                return response.json();
+              })
+              .catch((error) => {
+                console.error(
+                  "Error occurred while confirming the appointment:",
+                  error
+                );
+              });
+          }
 
-
-        if (clickedElement.id === "reject") {
-          fetch(`/appointments/cancle/${card.id}`, {
-            method: "PATCH",
-            headers:{
-              "Content-Type": "application/json",
-              Authorization: `Bearer ${localStorage.getItem("adminToken")}`
-            }
-          })
-          .then((response) => {
-            if(response.ok){
-              // console.log(`Appointment ${card.id} cancled successfully`)
-              location.reload()
-            }else{
-              console.error("Failed to cancle the appointment")
-            }
-            return response.json()
-          })
-          .catch((error) => {
-            console.error("Error occured while cancling the appointment: ", error)
-          })
-        }
-      });
-
+          if (clickedElement.id === "reject") {
+            fetch(`/appointments/cancle/${card.id}`, {
+              method: "PATCH",
+              headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${localStorage.getItem("adminToken")}`,
+              },
+            })
+              .then((response) => {
+                if (response.ok) {
+                  // console.log(`Appointment ${card.id} cancled successfully`)
+                  location.reload();
+                } else {
+                  console.error("Failed to cancle the appointment");
+                }
+                return response.json();
+              })
+              .catch((error) => {
+                console.error(
+                  "Error occured while cancling the appointment: ",
+                  error
+                );
+              });
+          }
+        });
 
         cardSection.appendChild(card);
       });
