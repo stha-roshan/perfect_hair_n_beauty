@@ -43,6 +43,14 @@
   /* background-color: cornflowerblue; */
 }
 
+.navigation_menu a{
+  color: #1e1e1e;
+
+}
+footer a{
+  color: #FFFFFF;
+}
+
 .navigation_links {
   gap: 40px;
 }

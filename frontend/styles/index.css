@@ -41,7 +41,16 @@
 .navigation_menu {
   gap: 40px;
   margin-left: 150px;
+  text-decoration: none;
   /* background-color: cornflowerblue; */
+}
+
+.navigation_menu a{
+  color: #1e1e1e;
+
+}
+footer a{
+  color: #FFFFFF;
 }
 
 .navigation_links {
