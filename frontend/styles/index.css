@@ -71,6 +71,41 @@
 #about-section {
   height: 55vh;
   background: #1e1e1e;
+  /* padding: 20px 200px; */
+  display: grid;
+  place-items: center;
+}
+
+#about-wrapper{
+  width: 50%;
+  /* background: #fff; */
+}
+
+#about-wrapper h2, p{
+  text-align: center;
+  margin: 10px 0;
+  color: #ffffff;
+  font-family: "Benne", serif;
+}
+
+#about-wrapper h2{
+  font-size: 28px;
+  letter-spacing: 1px;
+}
+
+#about-wrapper p{
+  line-height: 25px;
+  letter-spacing: 1px;
+  font-size: 22px;
+}
+
+#cards-section {
+  height: 65vh;
+  display: flex;
+  justify-content: center;
+  gap: 70px;
+  align-items: center;
+  padding: 20px 0;
 }
 
 #cards-section {
@@ -98,6 +133,7 @@
   background-repeat: no-repeat;
   border-radius: 8px;
 }
+
 
 .card .imgBox2 {
   height: 50%;
@@ -252,3 +288,5 @@ footer {
   cursor: pointer;
   transform: scale(1.1);
 }
+
+
