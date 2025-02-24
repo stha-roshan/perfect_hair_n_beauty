@@ -123,7 +123,8 @@ button:hover {
 
 .error {
   color: red;
-  margin-bottom: 20px;
+  margin: 20px 0;
+  text-align: center;
 }
 
 footer {

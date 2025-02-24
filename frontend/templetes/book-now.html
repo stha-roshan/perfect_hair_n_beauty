@@ -43,16 +43,16 @@
 
         <div class="container">
             <h2>Book Your Appointment</h2>
-            <div id="error-message" class="error"></div>
+            <!-- <div id="error-message" class="error"></div> -->
             <form id="appointmentForm">
                 <label for="date">Appointment Date:</label>
-                <input type="date" id="date" name="date" required />
+                <input type="date" id="date" name="date"  />
                 
                 <label for="time">Appointment Time:</label>
-                <input type="time" id="time" name="time" required />
+                <input type="time" id="time" name="time"  />
                 
                 <label for="service">Select Service:</label>
-                <select id="service" name="service" required>
+                <select id="service" name="service" >
                     <option value="Haircut">Haircut</option>
                     <option value="Facial">Facial</option>
                     <option value="Manicure">Manicure</option>
@@ -64,6 +64,7 @@
                 
                 <button type="submit">Book Appointment</button>
             </form>
+            <div id="error-message" class="error"></div>
         </div>
     </section>
 
