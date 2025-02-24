@@ -21,9 +21,8 @@ const bookAppointment = async (appointmentDetails) => {
 
       const data = await response.json();
       // Show success message to user
-      alert(data.message); 
-      // Redirect to user's appointments page
-    //   window.location.href = "/appointments/myappointments"; 
+      document.getElementById("error-message").textContent = "" 
+      alert(data.message);
     } catch (error) {
       console.error(error);
     }
