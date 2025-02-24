@@ -2,7 +2,10 @@ import { Appointment } from "../models/appointment.models.js";
 import { asyncHandler } from "../utils/asyncHandler.js";
 import { ApiResponse } from "../utils/ApiResponse.js";
 import { ApiError } from "../utils/ApiError.js";
-import { sendCancellationMail, sendConfirmationMail } from "../utils/mailtrap.js";
+import {
+  sendCancellationMail,
+  sendConfirmationMail,
+} from "../utils/mailtrap.js";
 
 export const bookAppointment = asyncHandler(async (req, res) => {
   const userId = req.user.id;
@@ -20,6 +23,13 @@ export const bookAppointment = asyncHandler(async (req, res) => {
       400,
       "Appointments cannot be booked for past dates or times"
     );
+  }
+
+  //add validation for double appointment for single time
+
+  const existingAppointment = await Appointment.findOne({ date, time });
+  if (existingAppointment) {
+    throw new ApiError(400, "Appointment at this date and time already exists");
   }
 
   // Create the appointment in the database
@@ -129,7 +139,7 @@ export const confirmAppointment = async (req, res) => {
       appointmentId,
       { status: "Confirmed" },
       { new: true }
-    ).populate("user")
+    ).populate("user");
 
     if (!updatedAppointment) {
       throw new ApiError(404, "Appointment not found");
@@ -165,7 +175,7 @@ export const cancleAppointment = async (req, res) => {
       appointmentId,
       { status: "Cancelled" },
       { new: true }
-    ).populate("user")
+    ).populate("user");
 
     if (!cancledAppointment) {
       throw new ApiError(404, "Appointment not found");
